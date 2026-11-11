@@ -1,0 +1,16 @@
+{
+  // Cloudflare Worker that serves the built Vite site as static assets.
+  // `wrangler deploy` runs the build first, so the deployed files are the
+  // compiled bundle in bujji-storyland/dist, never the raw /src files.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "bujjistoryland",
+  "compatibility_date": "2026-11-01",
+  "build": {
+    "command": "npm run build"
+  },
+  "assets": {
+    "directory": "./bujji-storyland/dist",
+    // Vue Router uses history mode: unknown paths fall back to index.html.
+    "not_found_handling": "single-page-application"
+  }
+}

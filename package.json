@@ -1,0 +1,9 @@
+{
+  "name": "bujji-storyland-website",
+  "private": true,
+  "description": "Repo root: builds the Vite app in ./bujji-storyland for the Cloudflare Worker.",
+  "scripts": {
+    "build": "cd bujji-storyland && npm install && npm run build",
+    "dev": "cd bujji-storyland && npm run dev"
+  }
+}
