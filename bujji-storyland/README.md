@@ -58,7 +58,7 @@ The first run asks you to log in to Cloudflare in the browser.
 
 In your Pages project open **Custom domains → Set up a domain** and follow the DNS steps.
 
-> Page refreshes on routes like `/episodes` work because `public/_redirects` sends every path to `index.html` (single-page-app fallback).
+> Page refreshes on routes like `/episodes` work because `wrangler.jsonc` (repo root) sets `not_found_handling: "single-page-application"`, which sends unknown paths to `index.html`. Cloudflare Pages does the same automatically when there is no `404.html`.
 
 ---
 
